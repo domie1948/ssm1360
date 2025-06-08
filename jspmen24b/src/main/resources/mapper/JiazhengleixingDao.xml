@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JiazhengleixingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.JiazhengleixingEntity" id="jiazhengleixingMap">
+        <result property="jiazhengleixing" column="jiazhengleixing"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.JiazhengleixingVO" >
+		SELECT * FROM jiazhengleixing  jiazhengleixing         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.JiazhengleixingVO" >
+		SELECT  jiazhengleixing.* FROM jiazhengleixing  jiazhengleixing 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.JiazhengleixingView" >
+
+		SELECT  jiazhengleixing.* FROM jiazhengleixing  jiazhengleixing 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.JiazhengleixingView" >
+		SELECT * FROM jiazhengleixing  jiazhengleixing <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
